@@ -275,8 +275,8 @@ code {
   display: block;
   padding: 10px 0;
   width: 165px;
-  height: 60px;
-  background-image: url("images/logo-header.png");
+  height: 50px;
+  background-image: url("images/hs-gitblog-logo.png");
   background-position: 0px 10px;
   background-repeat: no-repeat;
   background-size: 165px 60px;
