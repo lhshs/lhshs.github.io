@@ -219,6 +219,7 @@ button::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
+/* 전체 웹 크기 */
 html,
 body,
 #container {
@@ -996,12 +997,15 @@ code {
   background-size: 100% 100%;
   background-image: url("images/thumb-default.png");
 }
+/* Home Title */
 .article-summary .article-summary-inner .article-title {
   margin-bottom: 10px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.5em;
   word-wrap: break-word;
+  /* overflow: hidden; */
+  height: 3em;
 }
 .article-summary .article-summary-inner .article-title a {
   -webkit-transition: color 0.3s ease-in;
@@ -1015,7 +1019,7 @@ code {
   color: #aaa;
   font-size: 16px;
   line-height: 1.6em;
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 6.4em;
 }
 .article-summary:hover .thumbnail .thumbnail-image {
