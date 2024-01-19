@@ -5,114 +5,187 @@
 
 <head>
      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap" rel="stylesheet">
 
-     <title>One Page Resume</title>
+     <title>lhshs Resume</title>
 
      <style type="text/css">
-        * { margin: 0; padding: 0; }
-        body { font: 16px Helvetica, Sans-Serif; line-height: 24px; background: url(images/noise.jpg); }
-        .clear { clear: both; }
-        #page-wrap { width: 800px; margin: 40px auto 60px; }
-        #pic { float: right; margin: -30px 0 0 0; }
-        h1 { margin: 0 0 16px 0; padding: 0 0 16px 0; font-size: 42px; font-weight: bold; letter-spacing: -2px; border-bottom: 1px solid #999; }
+         * { margin: 0; padding: 0; }
+         body { font: 16px Helvetica, Sans-Serif; line-height: 28px; background: url(images/noise.jpg); }
+         .clear { clear: both; }
+         #page-wrap { width: 800px; margin: 40px auto 60px; }
+         #pic {float: right; 
+            margin: -30px 0 0 0; 
+            margin-top: 80px; 
+            margin-right: 20px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+        }
+        h1 { margin: 0 0 16px 0; padding: 0 0 16px 0; font-size: 42px; 
+            font-family: 'Noto Sans KR', sans-serif; 
+            font-weight: bold; letter-spacing: -2px; border-bottom: 1px solid #999; }
         h2 { font-size: 20px; margin: 0 0 6px 0; position: relative; }
-        h2 span { position: absolute; bottom: 0; right: 0; font-style: italic; font-family: Georgia, Serif; font-size: 16px; color: #999; font-weight: normal; }
+        h2 span { position: absolute; 
+            bottom: 0; right: 0; font-style: italic; 
+            font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #999; font-weight: normal; }
         p { margin: 0 0 16px 0; }
         a { color: #999; text-decoration: none; border-bottom: 1px dotted #999; }
         a:hover { border-bottom-style: solid; color: black; }
-        ul { margin: 0 0 32px 17px; }
-        #objective { width: 500px; float: left; }
-        #objective p { font-family: Georgia, Serif; font-style: italic; color: #666; }
-        dt { font-style: italic; font-weight: bold; font-size: 18px; text-align: right; padding: 0 26px 0 0; width: 150px; float: left; height: 100px; border-right: 1px solid #999;  }
-        dd { width: 600px; float: right; }
-        dd.clear { float: none; margin: 0; height: 15px; }
+        ul { margin: 0 0 32px 27px; }
+        #objective { width: 595px; float: left; }
+        #objective p { font-family: 'Noto Sans KR', sans-serif; font-style: italic; color: #666; } /* 소개 */
+        dt { font-style: italic; 
+            font-weight: bold; 
+            font-size: 18px; 
+            color: #0066ff;
+            text-align: center; 
+            padding: 0 26px 0 0; 
+            width: 80px; float: left; height: 30px; border-right: 5px solid #ff0000; } /* 목차, 구분선 */
+        dd { width: 680px; float: right; font-family: 'Noto Sans KR', sans-serif; color: #000000; } /* 내용 */
+        dd.clear { float: none; margin: 0; height: 20px; }
      </style>
 </head>
 
 <body>
 
     <div id="page-wrap">
-    
-        <img src="images/cthulu.png" alt="Photo of Cthulu" id="pic" />
-    
+        <img src="images/lhshs.png" alt="Photo of Cthulu" id="pic" width="20%"/>
         <div id="contact-info" class="vcard">
-        
             <!-- Microformats! -->
-        
-            <h1 class="fn">C'thulhu</h1>
-        
+            새로운 도전과 배움에 두려움이 없는 개발자 
+            <h1 class="fn">HyungSeok Lee</h1>
             <p>
-                Cell: <span class="tel">555-666-7777</span><br />
-                Email: <a class="email" href="mailto:greatoldone@lovecraft.com">greatoldone@lovecraft.com</a>
+                <img src="/Resume/images/home_icon.png" width="2%"> : <span>Mapogu, Seoul</span><br />
+                <!-- <img src="/Resume/images/phone_icon.png" width="2%"> : <span>010-2478-1175</span><br /> -->
+                <img src="/Resume/images/mail_icon.png" width="2%"> : <a href="mailto:hs.lion2@gmail.comm">hs.lion2@gmail.com</a><br />
+                <img src="/Resume/images/github_icon.png" width="2%"> : <a href="https://github.com/lhshs">lhshs</a><br />
+                <img src="/Resume/images/portfolio_icon.png" width="2%"> : <a href="https://lhshs.github.io/">gitblog</a>
             </p>
         </div>
-                
         <div id="objective">
             <p>
-                I am an outgoing and energetic (ask anybody) young professional, seeking a 
-                career that fits my professional skills, personality, and murderous tendencies. 
-                My squid-like head is a masterful problem solver and inspires fear in who gaze upon it. 
-                I can bring world domination to your organization. 
+                한국 콘텐츠 진흥원에서 주최한 예술과 인공지능 연계 사업에 참여해 
+                Rule-Base 음악 생성 작품을 제작하며 컴퓨터 프로그래밍, 인공지능에 관심 갖게 됐습니다. <br />
+                Machine Learning과 데이터 시각화, 분석 파이프라인 구축을 중점으로 다양한 프로젝트를 진행했으며 
+                추후 DevOps 엔지니어를 목표로 꾸준히 공부하고 있습니다. <br />
             </p>
         </div>
-        
         <div class="clear"></div>
-        
         <dl>
+            <!-- Experience -->            
             <dd class="clear"></dd>
-            
-            <dt>Education</dt>
-            <dd>
-                <h2>Withering Madness University - Planet Vhoorl</h2>
-                <p><strong>Major:</strong> Public Relations<br />
-                   <strong>Minor:</strong> Scale Tending</p>
-            </dd>
-            
-            <dd class="clear"></dd>
-            
-            <dt>Skills</dt>
-            <dd>
-                <h2>Office skills</h2>
-                <p>Office and records management, database administration, event organization, customer support, travel coordination</p>
-                
-                <h2>Computer skills</h2>
-                <p>Microsoft productivity software (Word, Excel, etc), Adobe Creative Suite, Windows</p>
-            </dd>
-            
-            <dd class="clear"></dd>
-            
             <dt>Experience</dt>
             <dd>
-                <h2>Doomsday Cult <span>Leader/Overlord - Baton Rogue, LA - 1926-2010</span></h2>
+                <h2>Web Service About Online Lecture Analysis 
+                    <span>23.11.20 - 24.01.02
+                    </span>
+                </h2>
                 <ul>
-                    <li>Inspired and won highest peasant death competition among servants</li>
-                    <li>Helped coordinate managers to grow cult following</li>
-                    <li>Provided untimely deaths to all who opposed</li>
+                    <li>강의 자막과 성취 기준 요약 및 유사도 분석 (GPT API, langchain)</li>
+                    <li>Plotly Web과 텍스트 분석 파이프라인 제작 및 배포 (Docker, AWS ECS, ECR)</li>
+                    <li>사용자 상호 작용을 통한 실시간 데이터 추출, 적재 및 분석 프로세스 구현 (AWS S3, RDS, Lambda)</li>
+                    <li>Link</li>
                 </ul>
                 
-                <h2>The Watering Hole <span>Bartender/Server - Milwaukee, WI - 2009</span></h2>
+                <h2>대구 교통사고 피해 예측 AI 경진대회 (Dacon, 상위 4%)
+                    <span>23.11.25 - 23.12.10
+                    </span>
+                </h2>
                 <ul>
-                    <li>Worked on grass-roots promotional campaigns</li>
-                    <li>Reduced theft and property damage percentages</li>
-                    <li>Janitorial work, Laundry</li>
+                    <li>Data Aggregation, Preprocess, Encoding, Scaling, Parameter Tuning 연구</li>
+                    <li>AutoML, TFDF 모델을 활용해 성능 지표 RMSLE를 0.63에서 0.4대로 향상</li>
+                    <li>Link</li>
                 </ul> 
+
+                <h2>Image Recognition Mobile Application
+                    <span>23.10.30 - 23.11.17
+                    </span>
+                </h2>
+                <ul>
+                    <li>Flutter를 활용한 Mobile Application Prototype 제작 및 AWS EC2 서버와 연동 </li>
+                    <li>Cloud Storage 서비스인 Firebase를 활용한 DB 구축</li>
+                    <li>EC2 내 modelling 결과값 도출 후 Application으로 반환 </li>
+                    <li>Link</li>
+                </ul> 
+
+                <h2>Data ETL In Python
+                    <span>23.09.04 - 23.09.08
+                    </span>
+                </h2>
+                <ul>
+                    <li>Relational Database와 Document Database 간 ETL pipeline 구축</li>
+                    <li>클래스, 모듈화를 이용한 Code Refactoring</li>
+                    <li>Link</li>
+                </ul> 
+
             </dd>
             
+            
+            <!-- Certificate -->            
             <dd class="clear"></dd>
+            <dt>Certificate</dt>
+            <dd>
+                <h2>빅데이터분석기사
+                    <span>한국데이터산업진흥원, 2023.12
+                    </span>
+                </h2>
+                <p> </p> 
+            </dd>
+            <dd>
+                <h2>정보처리기사
+                    <span>한국산업인력공단, 2023.11
+                    </span>
+                </h2>
+                <p> </p> 
+            </dd>
+            <dd>
+                <h2>SQL 개발자(SQLD)
+                    <span>한국데이터산업진흥원, 2023.04
+                    </span>
+                </h2>
+                <p> </p> 
+            </dd>
+            <dd>
+                <h2>데이터 분석 준전문가(ADsP)
+                    <span>한국데이터산업진흥원, 2023.03
+                </h2>
+                <ul></ul>
+            </dd>
             
-            <dt>Hobbies</dt>
-            <dd>World Domination, Deep Sea Diving, Murder Most Foul</dd>
-            
+            <!-- Training -->           
             <dd class="clear"></dd>
-            
-            <dt>References</dt>
-            <dd>Available on request</dd>
-            
-            <dd class="clear"></dd>
-        </dl>
-        
-        <div class="clear"></div>
-    
+            <dt>Training</dt>
+            <dd>
+                <h2>프로젝트 기반 빅데이터 서비스 개발자 4기
+                    <span>천재교육, 2023.07 - 2024.01
+                    </span>
+                </h2>
+                <ul>
+                    <li>전반적인 빅데이터 활용 분야 학습 및 팀 프로젝트 진행</li>
+                </ul>
+            </dd>
+            <dd>
+                <h2>스타트업 AI 기술인력 양성사업, 이어드림스쿨 2기
+                    <span>중진공, 2023.07 - 2024.01
+                    </span>
+                </h2>
+                <ul>
+                    <li>기업 연계 프로젝트 진행, 글로벌 창업 사관학교 창업 특강 및 멘토링 참여</li>
+                </ul>
+            </dd>
+            <dd>
+                <h2>인공지능 연계 콘텐츠 혁신 인재 사업
+                    <span>한국콘텐츠진흥원, 2023.07 - 2024.01
+                    </span>
+                </h2>
+                <ul>
+                    <li>SonicArt 부문 수료 및 안산 예술의 전당 전시</li>
+                </ul>
+            </dd>
+     
+        </dl>   
     </div>
 
 </body>
