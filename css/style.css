@@ -230,17 +230,21 @@ body,
   background: #006bde;
 }
 body {
-  background: #eaeaea;
-  font: 14px "Titillium Web", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
+  background: #dbecff;
+  font: 14px "rgb(53, 212, 212)um Web", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
   -webkit-text-size-adjust: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+  /* font-family: 'Nanum Pen Script', cursive; */
 }
 code {
   margin: 0 2px;
-  color: #e96900;
+  color: #000000;
   padding: 3px 5px;
   font-size: 0.8em;
   border-radius: 2px;
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  display: inline-block;
+  /* font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace; */
+  font-family: 'Noto Sans KR', sans-serif;
   background-color: #f8f8f8;
 }
 .container {
@@ -248,10 +252,11 @@ code {
   padding: 0 20px;
 }
 .container-inner {
-  max-width: 1120px;
-  min-width: 320px;
+  max-width: 1200px;
+  min-width: 500px;
   width: 100%;
   margin: 0 auto;
+
 }
 .container-inner:before,
 .container-inner:after {
@@ -291,10 +296,10 @@ code {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-box-shadow: rgba(0,0,0,0.098) 0px 1px 1px 0px;
-  box-shadow: rgba(0,0,0,0.098) 0px 1px 1px 0px;
-  padding-left: 340px;
-  background: url("images/s-left.png") repeat-y left 0;
+  -webkit-box-shadow: rgba(201, 15, 15, 0.098) 0px 1px 1px 0px;
+  box-shadow: rgba(214, 25, 25, 0.098) 0px 1px 1px 0px;
+  padding-left: 280px;
+  /* background: url("images/s-left.png") repeat-y left 0; */
 }
 .main-body-inner:before,
 .main-body-inner:after {
@@ -315,7 +320,7 @@ code {
 #main .main-body-header {
   background: #fff;
   position: relative;
-  padding: 18px 30px 17px;
+  padding: 18px 30px 7px;
   border-bottom: 1px solid #eee;
   color: #666;
   font-size: 16px;
@@ -343,16 +348,21 @@ code {
   clear: both;
 }
 #header {
-  background: #26272b;
+  /* background: #4b5683; */
+  /* background-image: url('/css/images/beach.jpg');
+  background-size: cover;
+  background-position: 0 85%; */
   padding-bottom: 60px;
   position: relative;
 }
 #header-outer {
   height: 100%;
   position: relative;
+  
 }
 #header-inner {
   position: relative;
+  background-color: #3da1ff;
 }
 #header-title {
   text-align: center;
@@ -556,8 +566,8 @@ code {
 }
 #sidebar {
   float: left;
-  margin-left: -340px;
-  width: 340px;
+  margin-left: -280px;
+  width: 280px;
 }
 #sidebar .sidebar-toggle {
   display: none;
@@ -654,7 +664,7 @@ code {
   position: relative;
   margin-top: 0;
   display: block;
-  color: #aaa;
+  color: #ff0000;
   padding: 16px 40px 24px;
   border-bottom: 1px solid #ddd;
   -webkit-transition: 0.2s ease-in;
@@ -1610,8 +1620,9 @@ a.article-title:hover {
 #page-nav .space {
   color: #ddd;
 }
+/* below */
 #footer {
-  background: #33363b;
+  background-color: #3da1ff;
   margin-top: 60px;
   color: #aaa;
   line-height: 1.6em;
@@ -1625,13 +1636,14 @@ a.article-title:hover {
 }
 #footer .credit {
   padding: 30px 30px 0px 30px;
+  color:#000
 }
 #footer .footer-plugins {
   padding: 0px 30px 30px 30px;
 }
 #footer #back-to-top {
-  background: #eaeaea;
-  color: #777;
+  background: #c5fbff;
+  color: #000000;
   overflow: hidden;
   text-align: center;
   width: 60px;
@@ -1903,12 +1915,12 @@ i.icon:before {
     margin-top: -50px;
   }
   .main-body-inner {
-    padding-left: 50px;
+    padding-left: 10px;
     background-position: -290px 0 !important;
   }
   .main-body-inner #sidebar {
     left: 0;
-    background: url("images/s-left.png") repeat-y left 0;
+    /* background: url("images/s-left.png") repeat-y left 0; */
     margin: 0;
     height: 100%;
     position: absolute;
@@ -1967,8 +1979,8 @@ i.icon:before {
     transition: opacity 0.2s ease-in;
   }
   .main-body-inner #sidebar.expend {
-    width: 340px;
-    overflow-y: auto;
+    width: 280px;
+    /* overflow-y: auto; */
     z-index: 2;
     -webkit-transition: width 0.2s ease-in;
     -moz-transition: width 0.2s ease-in;
@@ -2103,6 +2115,7 @@ i.icon:before {
   #main .main-body-content .article-single,
   #main .main-body-content #comments {
     padding: 15px;
+  
   }
   #main .main-body-content #page-nav {
     padding-right: 15px;
@@ -2132,6 +2145,7 @@ i.icon:before {
   }
   #sidebar .widgets-container {
     padding-bottom: 15px;
+    
   }
   #footer {
     margin-top: 0px;

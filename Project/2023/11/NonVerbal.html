@@ -5,6 +5,13 @@
         
         <title>온라인 강의 제작자를 위한 영상 분석 웹 서비스 | Hexo</title>
         
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- font link -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap" rel="stylesheet">
+        <!-- code highlight link -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
+
         <meta name="viewport" content="width=device-width, initial-scale=2, maximum-scale=5">
         <meta name="keywords" content="" />
         <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
@@ -32,10 +39,13 @@
         
         <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
         <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
         
         <meta name="generator" content="Hexo 6.3.0"></head>
         
-        <body>
+        <body onload="brython()">
             <div id="wrap">
                 <header id="header">
                     <div id="header-outer" class="outer">
@@ -147,139 +157,113 @@
                                                     <br>
                                                     <strong>Member</strong> <br> 김민수, 이찬녕, 이형석, 임유하, 전혁선</br>
                                                     <br>
-                                                    <strong>Roll</strong> <br> - </br>
+                                                    <strong>Roll</strong> <br> 텍스트 분석 파이프라인 설계 및 AWS 인프라 구축, 배포 </br>
+                                                    <br>
+                                                    <strong>Used</strong> <br> <img src="/Project/2023/11/images/used_program.png"> </br>
 
                                                     <br>
                                     <!-- Intro -->
-                                                    <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Introduction</h3>
-                                                    지역별 교육 기회의 불평등성 및 청소년 비행 문제 분석을 위해 지역별 중학생을 대변할 수 있는 데이터를 분석하고, 각 변수 사이의 상관관계 실증하는 것에 이번 프로젝트의 목적이 있다.</br>
-                                                    <br>분석 결과물을 대쉬보드 나타내고자 했고, 개인적으로 도전해보고 싶었던 것은 무료 도메인을 활용해 대쉬보드를 배포해 보는 것이었다. Plotly의 Dash를 주로 활용했으며, 최종 대쉬보드는 
-                                                    <a target="_blank" rel="noopener" href="https://first-dashboard.onrender.com/">이곳</a>에서 확인할 수 있다.</br>
-                                                    <s>무료 호스팅 서버가 구동될 때 까지 약 15초 정도 시간이 소요된다</s><br>
-
+                                                    <h4 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Introduction</h4>
+                                                    이번 프로젝트는 <strong>‘인기 있는 강의’</strong>와 <strong>‘비교적 인기가 덜 한 강의’</strong>의 <u>비언어적 특성</u>에 유의미한 차이가 있을까 라는 의문으로 시작했다. 
+                                                    <p>온라인 강의를 제작할 때 기존의 인기있는 강의와 비교 분석해보고 싶은 부분이 있을 것이다. 해당 프로젝트에서 사용자는 영상 업로드 한번으로 비교 분석할 수 있는 결과를 얻을 수 있다.</p>
+                                                    <p>이번 프로젝트에서 개인적인 목표는 AWS Infra를 직접 구축하고 제작한 웹과 모델을 배포해 보는 것, Docker를 활용해보는 것이었다.</p>
+                                                    
                                                     <br>
-                                    <!-- Method -->
-                                                    <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Method</h3>
-                                                    <img src="/css/images/edustats1.png" alt="팀 내에서 맡은 역할 Workflow">
-
+                                    <!-- Scheduling -->
+                                                    <h4 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Scheduling</h4>
+                                                    팀원들 간 역할 분담 및 스케줄링은 WBS와 Kanban Board로 관리했다. 익숙하지 않은 스킬들이 들어가야 할 프로젝트이기에 학습과 스케줄링을 실시간으로 병행하기는 쉽지 않았다. 
+                                                    <p><img src="/Project/2023/11/images/timeline.png" alt="TimeLine"></p>
+                                                    <p><img src="/Project/2023/11/images/wbs.png" alt="WBS"></p>
+                                                    <p><img src="/Project/2023/11/images/kanban.png" alt="Kanban Board"></p>
+                                                    Kanban Board를 직접 활용해 본 것은 처음인데, 팀원들이 어떤 역할을 하고 있는지와 앞으로 해야 할 것들에 대한 Board들을 한 눈에 볼 수 있어서 꽤 유용했다. 
+                                                    <p> 처음 시작할 때 카테고리는 [시작 전], [진행 중], [완료] 3가지로 나눠서 작업했지만 계속해서 늘어나는 보드들과 한 눈에 보기 어려워졌다. [완료된지 1주 이상 경과], [보류], [백로그] 탭을 추가함으로써 관리하기 수월해졌다.</p>
                                                     <br>
-                                    <!-- Data -->
-                                                    <h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Data</h3>
-                                                    - 2018-2022 지역별 중학교 졸업 후 상황  
-                                                    <br>- 2018-2022 지역별 중학교 사교육비 지출
-                                                    <br>- 2018-2022 지역별 청소년 음주율, 흡연율 (청소년 비행)
-                                                    <br>- 2018-2022 지역별 청소년 우울감 경험률
 
-                                                    <br>
-                                                    <br>
-                                    <!-- Visualization -->
-                                                    <h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Visualization</h3>
-                                                    <img src="/css/images/edustats2.png" alt="지역별 사교육 비율 시각화">
-                                                    데이터의 지역별 시각화는 지오서비스웹(GEOSERVICE-WEB)이라는 곳에서 제공하는 행정구역도 데이터를 JSON 파일로 변환해 사용했다. JSON 파일 내 ‘CTP_KOR_NM’을 수집한 데이터의 지역명과 일치시켜 줌으로써 위치 데이터를 받아올 수 있었다.</br>
-                                                    <figure class="highlight bash">
-                                                        <table>
-                                                            <!-- <td class="gutter"><pre><span class="line">1</span></pre></td> -->
-                                                            <!-- <td class="code"><pre><span class="line">hexo new </span><br></pre></td>
-                                                            <td class="code"><pre><span class="line">hexo new </span><br></pre></td>
-                                                            <td class="code"><pre><span class="line">hexo new </span><br></pre></td>
-                                                            <td class="code"><pre><span class="line">hexo new </span><br></pre></td> -->
-                                                            <!-- <span class="string">&quot;My New Post&quot;</span> -->
-                                                            fig = px.choropleth(df, </br>
-                                                                                <!-- geojson=korea_json, </br> -->
-                                                                                locations='지역', </br>
-                                                                                color='사교육비',           </br>
-                                                                                color_continuous_scale='YlOrRd',</br>
-                                                                                featureidkey='properties.CTP_KOR_NM',</br>
-                                                                                animation_frame='year')</br>
-                                                            </br>
-                                                            fig.update_geos(fitbounds="locations", visible=False)</br>
-                                                            fig.update_layout(</br>
-                                                                autosize=True,</br>
-                                                                title_text='Yearly Private Education Ratio (%)', </br>
-                                                                title_font_size=12, </br>
-                                                                title_x=0.5)</br>
-                                                            </br>
-                                                            fig.layout.coloraxis.colorbar.title = ''</br>
-                                                            fig.write_html('map_year.html')
-                                                        </table>
-                                                    </figure>
-
-                                                    <br>최종적으로 Plotly 의 Dash 와 합치기 위해 html 로 변환했고 같은 경로 내 assets 폴더를 생성 후 코드 실행 시 참조될 수 있게 했다.</br>
-                                                    <figure class="highlight bash">
-                                                        <table>
-                                                            app.layout = html.Div([</br>
-                                                            html.Div([</br>
-                                                                                                            ...</br>
-                                                                # korea map</br>
-                                                                html.Iframe(</br>
-                                                                            src="assets/map_year.html",</br>
-                                                                            style={"height": "500px", "width": "100%"}),</br>
-                                                                                                            ...</br>
-                                                            ])</br>
-                                                            )</br>
-                                                        </table>
-                                                    </figure>
-                                                    <br>데이터 분포를 지역별로 표시하여 비교하고자, Plotly의 graph_obj를 활용해 Boxplot 을 추가했다. 
-                                                    <img src="/css/images/edustats3.png" alt="첫 호스팅 build에 사용된 시간">
-                                                    <figure class="highlight bash">
-                                                        <table>
-                                                            ... </br>
-                                                            import plotly.graph_objs as go </br>
-                                                            ... </br>
-                                                             </br>
-                                                            app.layout = html.Div([ </br>
-                                                                                                              ... </br>
-                                                                                # box plot </br>
-                                                                                html.Div([ </br>
-                                                                                    dcc.Dropdown( </br>
-                                                                                        id='column-dropdown', </br>
-                                                                                        options=dropdown_options, </br>
-                                                                                        value=df_boxsstrip.columns[11],  # Set Default Value </br>
-                                                                                        style={'width': '50%'} </br>
-                                                                                    ), </br>
-                                                                                    dcc.Graph(id='box-plot')]), </br>
-                                                            ]) </br>
-                                                             </br>
-                                                                                                                            ... </br>
-                                                             </br>
-                                                            # box plot </br>
-                                                            # Callback function definition </br>
-                                                            @callback( </br>
-                                                                Output('box-plot', 'figure'), </br>
-                                                                Input('column-dropdown', 'value') </br>
-                                                            ) </br>
-                                                            def update_plots(selected_column): </br>
-                                                                # Create the Box Plot </br>
-                                                                box_fig = go.Figure() </br>
-                                                                box_fig.add_trace(go.Box(x=df_boxsstrip['지역'], y=df_boxsstrip[selected_column], name='Box Plot',  </br>
-                                                                                         boxpoints='all', marker_color='#FF851B', marker_size=2, line_width=1 </br>
-                                                                                        )) </br>
-                                                                box_fig.update_layout(height=700, width=1300, title = 'Data Distribution') </br>
-                                                                return box_fig </br>
-                                                        </table>
-                                                    </figure>
-
-                                                    <br>
-                                    <!-- Hosting -->
-                                                    <h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Hosting</h3>
-                                                    <img src="/css/images/edustats4.png" alt="첫 호스팅 build에 사용된 시간">
-                                                    Ploty의 공식 youtube 채널을 참고했고, render 라는 사이트를 활용했다. 
-                                                    render 사이트의 호스팅 구조는 필요한 라이브러리를 명시한 requirements.txt 파일과 .py 파일을 git repository에 업로드해 놓으면 되는 간단한 방식이었다. 
-                                                    여러 번의 배포 실패와 이번 프로젝트에서는 총 두 번의 배포를 성공했다. 
-                                                    render의 무료서비스는 최대 500 분의 build 제한 시간이 있지만 처음 사용해 보기에 충분한 듯 보인다.</br>
+                                    <!-- MockUp -->
+                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>MockUp</h4>
+                                                    <p><img src="/Project/2023/11/images/mockup.png"></p>
+                                                    
+                                                    구현하고자 하는 웹의 Mockup이다.
+                                                    <p>처음 웹에 접근했을 때는 사용자가 Video를 업로드 할 수 있는 화면이 나오고,
+                                                        <br>업로드 후에는 설정한 Feature마다 비교 분석 할 수 있는 그래프가 나온다.</p>
+                                                    
+                                                    <h5>Web 기능 정의서</h5>
+                                                    <p><img src="/Project/2023/11/images/function.png"></p>
+                                                    사용자는 해당 플랫폼을 통해 어떤 행동을 해야하고 얻어갈 수 있는지, 개발자는 어떤 부분들을 생각하며 작업해야 하는지에 대해 기능 정의서를 먼저 작성하고 작업에 들어갔다. 물론 처음에 적은 정의서로부터 계속 수정이 필요했다. 
                                                     
                                                     <br>
                                                     <br>
-                                    <!-- Code -->
-                                                    <strong>Code</strong><br>  
-                                                    프로젝트에 대한 보다 자세한 내용은 <a target="_blank" rel="noopener" href="https://github.com/bigdata4th-first-line/edustats">edustats</a>에서 확인할 수 있다.<br>
+                                    <!-- Text Similarity -->
+                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Text Similarity</h4>
+                                                    이번 프로젝트는 비언어의 특성 분석이 메인 주제였지만, 기획한 결과 비언어적 특성이 생각보다 많이 없었다. 따라서 나머지 팀원들은 비언어적 특성을 분석하고 나는 언어적 특성을 분석하기로 했다.
+                                                    각 강의별 텍스트를 비교하는 대상은 ‘국가교육과정 정보센터’에서 볼 수 있는 ‘수학 성취 기준’이다. 성취도와 비교한 이유는 공식적으로 정의된 것과 해당 수업의 내용이 얼마나 유사한지 비교함으로써 하나의 비교 지표로 활용될 수 있을 것이라 생각했기 때문이다.
+                                                    <p><img src="/Project/2023/11/images/text_process.png"></p>
+                                                    언어적 특성 또한 사용자가 Video를 Load했을 때 자동적으로 음성을 분리하고 텍스트로 만들어주는 과정을 거친다. 텍스트가 만들어지면 nltk 패키지로 전처리를 하고, langchain과 GPT API로 요약을 진행한다. 
+                                                    요약 과정을 거친 이유는 방대한 강의 내용 축소와 API 사용 경험을 늘리기 위함이었다. 
+                                                    GPT API는 $5이내에서 무료로 사용할 수 있다. (가입 후 3개월 이내)
+                                                    <p><img src="/Project/2023/11/images/gpt.png"></p>
+                                                    RPD(Request Per Day), RPM(Request Per Minute) 제한 문제가 있었는데 RPD는 Google ID를 추가 생성하여 해결할 수 있었고, 
+                                                    RPM은 time 패키지를 활용하여 자동화 할 수 있었다.
+                                                    <p><img src="/Project/2023/11/images/similarity.png"></p>
+                                                    텍스트 유사도는 두 개 이상의 문서나 문장 간의 유사성을 계산하는 기술이다. 이를 위해 비교하고자 하는 문서를 벡터로 나타내야 하는데, 
+                                                    텍스트를 벡터화하기 위해 이 프로젝트에서 사용한 Embedding 방법은 비교적 구현이 쉽고 빠른 TF-IDF를 사용했다. 
+                                                    유사도를 측정하기 위해서도 다양한 방법이 있는데, 그 중 벡터간 유사도를 활용하는 Cosine Similarity와, 벡터 간 거리를 활용하는 Euclidean Distance를 활용했다. 
+                                                    측정 결과 **‘인기 강좌’**의 Cosine Similarity가 **‘상대적으로 인기가 덜 한 강좌’**보다 높고, Euclidean Distance는 더 가깝다는 결과가 나왔다
+                                                    (**’인기 강좌’가 ‘성취 기준’과 더 유사하다**). 이번 프로젝트에서 비교할 수 있는 강좌가 3가지 밖에 없어서 통계적 유의성을 검증하여 설득력을 높이기에는 어려움이 있었다. 
+                                                    만약 여러 강좌를 비교하여 유사도를 측정할 수 있는 지표를 나타낸다면, 성취 기준과의 유사도가 인기도를 판단할 수 있는 지표일지 생각할 수 있을 것이다.
 
                                                     <br>
-                                    <!-- ref -->
-                                                    <strong>Reference</strong><br>
-                                                    <a target="_blank" rel="noopener" href="https://plotly.com/examples/dashboards/">https://plotly.com/examples/dashboards/</a>
-                                                    <br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=H16dZMYmvqo&ab_channel=Plotly">https://www.youtube.com/watch?v=H16dZMYmvqo&ab_channel=Plotly</a>
-                                                    <br><a target="_blank" rel="noopener" href="https://render.com/">https://render.com/</a>
+                                    <!-- AWS Architecture -->
+                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>AWS Architecture</h4>
+                                                    <p><img src="/Project/2023/11/images/Infra_Pipeline.png">
+                                                        참 많이 봤지만 처음으로 직접 그려본 architecture다. 머리 속에서 추상적으로 있던 server와 database, web의 상호작용을 시각적으로 그려보니 훨씬 이해하기도 쉬웠고 어떤 부분을 수정해야 할 지 파악하기 좋았다. 
+                                                    </p>
+                                                    <p><img src="/Project/2023/11/images/Infra_Pipeline(v2).png">
+                                                        두 번째 그려본 Architecture. S3의 Trigger라는 개념을 알게 됐고, Lambda를 구동하여 Model을 실행해 볼 수 있겠다는 생각을 했다. 하지만 아직 Web이 AWS Cloud 칸 밖에 존재한다. Plotly Dash의 배포에 대해 아직 감을 못 잡은 듯 하다. 
+                                                    </p>
+                                                    <p><img src="/Project/2023/11/images/Infra_Pipeline(v3).png">
+                                                        어느 정도 Architecture에 대한 이해를 하고, Modeling 결과를 받는 데 까지 시간이 걸린다는 것을 인지하고 AWS SQS 서비스를 추가한 세 번째 Architecture. 개발 단계에서 사용자 데이터와 비교할 데이터를 적재하는 과정과 Docker를 어떤 부분에서 사용해야 할지 함께 그리기 시작했다. 
+                                                    </p>
+                                                    <p><img src="/Project/2023/11/images/Final_AWS_Architecture.png">
+                                                        최종 구현 완료된 Architecture. 다른 팀원들이 분석에 활용한 Model은 같지만 다른 parameter를 활용했는데, 병렬 구조로 실행하려면 AWS 내 Kubernetes를 사용하는 것이 일반적이라고 들었다. 
+                                                        하지만 프로젝트 기간 내 구현하기 어려움이 있어 컨테이너를 쉽게 관리할 수 있는 ECS를 활용했고 Lambda로 ECR에 올려진 Image들을 구동함으로써 병렬 처리가 가능하게 했다. 
+                                                        Trigger는 S3에 영상이 적재됐을 때를 활용했는데, Lambda를 여러 개 사용하지 못하는 문제점을 발견하고 하나의 Lambda에 두 개의 Image를 실행하는 코드로 변경했다.
+
+                                                        <pre><code class="language-python">
+# 환경변수 설정
+
+import boto3
+import os
+
+s3 = boto3.client('s3', 
+                   aws_access_key_id = os.environ.get("AWS_ACCESS_KEY_ID"), 
+                   aws_secret_access_key = os.environ.get("AWS_SECRET_ACCESS_KEY"))
+bucket_name_video = os.environ.get("BUCKET_NAME_VIDEO")
+bucket_name_text = os.environ.get("BUCKET_NAME_TEXT")
+                                                            </code></pre>
+
+                                                        AWS Service를 이용하기 위해서는 Key 값들이 필요한데, 보안성을 위해 Key가 포함된 코드를 Docker Image로 만들지 않고 AWS 내에서 환경 변수로 설정해줬다.
+                                                    </p>
+                                                    <br>
+                                                    <br>
+                                    <!-- Result -->
+                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Result</h4>
+                                    최종 Web Simulation 영상이다.
+                                    <br>ECS로 2개의 Modeling Task가 실행되는 데 약 3-4분 정도가 걸렸는데, 대기하는 시간은 편집했다.
+                                    <div style="display: flex; justify-content: center;">
+                                        <p>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/xg5L94AL8eY?si=T03a_SsykPSWyKS8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        </p>
+                                    </div>
+                                                                         
+                                    <br>
+                                    <br>                                                    
+                                    <!-- Code -->
+                                                    <strong>Code</strong><br>  
+                                                    프로젝트에 대한 보다 자세한 내용은 <a target="_blank" rel="noopener" href="https://github.com/bigdata4th-first-line/edustats">Non_Verbal</a>에서 확인할 수 있다.<br>
+
+                                                    <br>
+
 
                                                 </div>
                                                 <footer class="article-footer">
@@ -498,6 +482,7 @@
 <!-- Custom Scripts -->
 
 <script src="/js/main.js"></script>
+    
+        </body>
 
-</body>
 </html>
