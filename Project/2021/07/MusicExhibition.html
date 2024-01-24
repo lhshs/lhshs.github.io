@@ -166,65 +166,174 @@
 
                                                     <p>전시의 최종 모습은 관람객이 그리는 그림의 데이터를 MIDI 데이터로 변환한 후 그 데이터를 직접 제작한 음악 알고리즘을 통해 하나의 기승전결이 있는 음악으로 만들어지게 하는 것으로 목표를 세웠다. 
                                                     재즈 화성학을 바탕으로 '규칙 기반 알고리즘'을 제작했고. 관람객이 어떤 색깔로 그림을 그리느냐에 따라 밝은 느낌’또는 '어두운 느낌'의 음악으로 나타나게 했다. 
-                                                    <br>드럼 패턴같은 경우 신경 네트워크를 기반으로 하는 Magenta Studio를 활용하여 MIDI 데이터를 생성했으며 알고리즘과 함께 '음악'으로써 표현될 수 있게 <strong>[그림1]</strong>과 같이 전시했다.
+                                                    <br>드럼 패턴같은 경우 신경 네트워크를 기반으로 하는 Magenta Studio를 활용하여 MIDI 데이터를 생성했으며 알고리즘과 함께 '음악'으로써 표현될 수 있게 <그림1>과 같이 전시했다.
                                                     </p>
-                                                    <img src="/Project/2021/07/images/1.png" alt="[그림1], 최종 전시 모습">
+                                                    <img src="/Project/2021/07/images/1.png" alt="<그림1>, 최종 전시 모습">
 
                                                     <br>
                                     <!-- Method -->
                                                     <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Method</h3>
-                                                    <img src="/Project/2021/07/images/2.png" alt="[그림2], C 장조와 A 단조 구성음 수치화">
-
+                                                    <p>
+                                                        작품을 감상하는 대부분의 사람이 '음악'이라고 느끼게 하려면 어떤 것들이 표현돼야 하는지 고민했고, 
+                                                        음악의 3요소로 정의되는 화성, 멜로디, 리듬을 가장 먼저 표현하고자 했다. 
+                                                        화성학은 클래식 화성학, 재즈 화성학으로 크게 나눌 수 있으며 언급하는 이론 용어들은 재즈 화성학을 기반으로 설명한다.
+                                                    </p>
+                                                    
+                                      <!-- Music Algorithm -->
+                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Music Algorithm</h4>
+                                                    재즈 화성학에는 다이아토닉이라는 개념이 존재한다. 다이아토닉 코드는 특정 조성의 구성음만으로 이루어진 코드들을 뜻한다. 
+                                                    음악에서 조성은 12가지로 나눌 수 있는데 각 조성 별 다이아토닉 코드의 구성음 규칙은 같다. 따라서 이 규칙을 프로그래밍으로 구현하고자 했다.
+                                                    <p>가장 익숙한 C장조와 A 단조의 MIDI 값들을 적어보며 규칙을 수치로서 정리했다.</p>
+                                                    <img src="/Project/2021/07/images/2.png" alt="<그림2>, C 장조와 A 단조 구성음 수치화">
+                                       <!-- 1. Harmonics -->
+                                                    <h5 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>1. Harmonics</h5>
+                                                    <img src="/Project/2021/07/images/3.png" alt="<그림3>">
+                                                    <그림2>와 같이 규칙을 수치화 한 후 장조와 단조의 다이아토닉 코드를 만들어 낼 수 있는 패치를 구현했다. 
+                                                    12가지 조성의 다이아토닉 코드의 규칙은 같지만 조성에 따라 구성 음들이 달라지기 때문에 
+                                                    <그림3>와 같이 각 조성과 기준이 되는 가온 다에 대한 부분도 설정할 수 있게 했다.
                                                     <br>
-                                      <!-- 1. Harmonics -->
-                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>1. Harmonics</h4>
-                                                    <img src="/Project/2021/07/images/3.png" alt="-">
-                                      <!-- 2. Melody -->
-                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>2. Melody</h4>
-                                                    <img src="/Project/2021/07/images/3.png" alt="-">
+                                                    <br>
 
-                                      <!-- 3. Rhythm -->
-                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>3. Rhythm</h4>
-                                                    <img src="/Project/2021/07/images/3.png" alt="-">      
-
+                                       <!-- 2. Melody -->
+                                                    <h5 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>2. Melody</h5>
+                                                    <img src="/Project/2021/07/images/4.png" alt="<그림4>">
+                                                    멜로디 부분은 앞서 구성한 화성 패치에서 선택된 코드들의 구성 음들로 이루어지게 했다. 
+                                                    그렇게 구성한다면 당연히 각 조성에서 갖고 있는 음들이 선택되기 때문에 멜로디를 처음 들었을 때 '어색한 느낌'을 줄일 수 있을 것이다. 
+                                                    <그림 3>을 기반으로 코드 구성 음이 추출되면 [zl.mth]와 [random]오브젝트를 통해 하나의 음이 나올 수 있게 <그림 4>와 같이 구성했다.
                                                     <br>
                                                     <br>
+
+                                       <!-- 3. Rhythm -->
+                                                    <h5 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>3. Rhythm</h5>
+                                                    리듬이 존재하기 위해서는 박자가 우선적으로 구현이 되어야 한다고 판단했고 흔히들 알고 있는 박자부터 표현했다. 
+                                                    박자 부분을 구현하기 위해 <그림5>와 같이 [counter], [if], [sel], [metro] 오브젝트를 주로 사용했다. 
+                                                    <p>4마디를 기준으로 몇 번 나오게 하느냐의 개념으로 리듬 표현이 가능하게 했으며 Play 파트에서 언급 하겠지만 
+                                                        [metro] 오브젝트 에서는 [transport] 오브젝트에서 설정한 [tempo]의 영향을 받을 수 있는 'n' 메서드를 사용했다.    
+
+                                                    <img src="/Project/2021/07/images/5.png" alt="<그림5>">
+                                                    대표적인 리듬 악기인 드럼같은 경우 신경 네트워크 기반 MIDI 데이터 생성기인 Magenta 프로그램과 MIDI 샘플을 섞어서 활용했다. 
+                                                    Magenta 프로그램에는 총 5가지 종류의 프로그램이 있는데 Generate 프로그램은 어떠한 데이터 없이 MIDI 데이터를 생성했고 
+                                                    나머지 Magenta 프로그램들은 입력한 MIDI 데이터에 영향을 받아 새로운 데이터를 생성해냈다. 
+                                                    </p>
+                                                    <img src="/Project/2021/07/images/6.png" alt="<그림6>">
+                                                    Magenta 프로그램의 실시간 사용은 어려워 MIDI 데이터를 추출한 후(<그림6>) Max/Msp에서 그 데이터를 불러옴으로써 리듬을 구현했다.
+                                                    <br>
+                                                    <br>
+
                                       <!-- VSTI -->
                                                     <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>VSTI</h4>
-                                                    <img src="/Project/2021/07/images/6.png" alt="-">    
+                                                    <img src="/Project/2021/07/images/7.png" alt="<그림7>">    
+                                                    VSTI는 Virtual Studio Technology Instrument의 약자로 가상 악기로 많이 불린다. 
+                                                    Ableton Live에서 <그림7>과 같이 다양한 VSTI들을 불러온 후 Max/Msp의 MIDI 데이터를 받아 사운드가 출력될 수 있게 구성했다.
+                                                    <p></p>
+                                                    <br>
 
+                                                    
                                       <!-- Play -->
                                                     <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Play</h4>
-                                                    <img src="/Project/2021/07/images/7.png" alt="-">                                                     
-                                                    
-
+                                                    <img src="/Project/2021/07/images/8.png" alt="<그림8>">                                                     
+                                                    설정한 알고리즘은 [transport] 오브젝트의 'tempo' 메서드에 영향을 받는다. 
+                                                    [transport] 오브젝트를 활용한 이유는 패치에 속해있는 모든 패치의 속도를 조절하기 용이했기 때문이다. 
+                                                    따라서 <그림8>의 ‘tempo' 수치를 변환시켜 준다면 전체 속도를 조절할 수 있다.
+                                                    <p></p>
                                                     <br>
                                     <!-- Result -->
                                                     <h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Result</h3>
                                       <!-- UI -->
                                                     <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>UI</h4>
-                                                    <img src="/Project/2021/07/images/7.png" alt="-">  
+                                                    <img src="/Project/2021/07/images/9.png" alt="<그림9>, 첫 화면(좌), Next를 누르면 나오는 화면(우)">
+                                                    관람객들이 무언가를 그려볼 수 있는 장치, 즉 Frontend 역시 Max/Msp로 구현했다. 
+                                                    [jit.pwindow], [jit.lcd]를 활용했고 어떤 색깔을 많이 쓰느냐는 RGBA 값의 합이 255가 넘으면 밝은 색, 그보다 낮으면 어두운 색으로 구분되게 설정했다. 
+                                                    <p>[gate] 오브젝트를 통해 색상 선택 후 해당 색깔을 얼마나 사용했는지 판단했으며 Next 버튼을 누르면 밝고 어두운 두 값을 비교해 Algorithm Patch로 넘겼다. 
+                                                    Bpatcher를 통해 Max/Msp의 presentation mode 화면이 넘어가게 했으며 <그림 9>와 같이 관람객들은 첫 번째 화면에서 그림을 그리고 두 번째 화면에서 색깔에 따라 만들어진 결과물들을 접할 수 있었다.  
+                                                    </p>
                                       <!-- Interaction -->
                                                     <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Interaction</h4>
-                                                    <img src="/Project/2021/07/images/7.png" alt="-">  
+                                                    <img src="/Project/2021/07/images/10.png" alt="<그림10>">
+                                                    이번 작품을 통해 나타내고 싶었던 것은 관람객이 그림을 자유롭게 그리고, 그 그림의 '어떠한 데이터'를 통해 음악이 만들어지는 것이었다. 
+                                                    <br>수 많은 인터렉션 방법 중에 '관람객이 직접 무언가를 그리는 방식'을 선택한 이유는 그리는 행위라는 것을 통해 쉽게 호기심을 유발하고 싶었고, 
+                                                    자신이 그린 그림에 영향을 받아 음악이 만들어짐으로써 직접 음악 작곡에 관여했다는 느낌을 주고 싶었다. 
+                                                    <br>또한 관람객이 그린 그림과 그 그림 데이터로 만들어진 음악을 <그림10>과 같이 QR code로 가져감으로써 작품에 대한 기억을 간직해 줬으면 하는 바람도 있었다.  
                                       <!-- Interaction Output -->
                                                     <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Interaction Output</h4>
-                                                    <img src="/Project/2021/07/images/7.png" alt="-">  
+                                                    <img src="/Project/2021/07/images/11.png" alt="관람객들이 직접 그린 그림 데이터">  
+                                                    <img src="/Project/2021/07/images/12.png" alt="알고리즘에 따라 저장된 wav file">  
+                                                    <br>
                                       <!-- Music Output -->
                                                     <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Music Output</h4>
-                                                    <img src="/Project/2021/07/images/7.png" alt="-">  
+                                                    작품 속 알고리즘과 관람객들의 그림으로 완성된 음악 
+                                                    <p>
+                                                    <strong>Bright(장조)</strong>
+                                                    <p>
+                                                        <div class="audio-container">
+                                                            <audio controls>
+                                                                <source src="/Project/2021/07/wav/bright/Date_2021_11_10_Time_10_23_44.wav" type="audio/wav">
+                                                                Your browser does not support the audio element.
+                                                            </audio>
+                                                            <audio controls>
+                                                                <source src="/Project/2021/07/wav/bright/Date_2021_11_10_Time_14_38_47.wav" type="audio/wav">
+                                                                Your browser does not support the audio element.
+                                                            </audio>
+                                                        </div>
+                                                    </p>
+                                                    <p>
+                                                        <div class="audio-container">
+                                                            <audio controls>
+                                                                <source src="/Project/2021/07/wav/bright/Date_2021_11_10_Time_15_19_8.wav" type="audio/wav">
+                                                                Your browser does not support the audio element.
+                                                            </audio>
+                                                            <audio controls>
+                                                                <source src="/Project/2021/07/wav/bright/Date_2021_11_10_Time_16_32_14.wav" type="audio/wav">
+                                                                Your browser does not support the audio element.
+                                                            </audio>
+                                                        </div>
+                                                    </p>
+
+                                                    <strong>Dart(단조)</strong>
+                                                    <p>
+                                                        <div class="audio-container">
+                                                            <audio controls>
+                                                                <source src="/Project/2021/07/wav/dark/Date_2021_11_10_Time_14_32_53.wav" type="audio/wav">
+                                                                Your browser does not support the audio element.
+                                                            </audio>
+                                                            <audio controls>
+                                                                <source src="/Project/2021/07/wav/dark/Date_2021_11_10_Time_15_10_32.wav" type="audio/wav">
+                                                                Your browser does not support the audio element.
+                                                            </audio>
+                                                        </div>
+                                                    </p>
+                                                    <br>
                                     <!-- Discussion -->
                                                     <h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Discussion</h3>
-                                                    <img src="/Project/2021/07/images/7.png" alt="-">                                                                                                                                                                           
+                                                    <img src="/Project/2021/07/images/13.png" alt="관람객들이 남겨준 방명록"> 
+                                                    네트워크 관련해 Max/Msp의 UDP노드를 활용했는데 네트워크의 끊김, 다른 네트워크와의 혼선 등 우려했던 것과 달리 네트워크 부분에서는 오류가 발생하지 않아 다행이었다. Ableton Live와 Max/Msp의 VSTI 연동 관련해서 가끔 오류를 일으켰지만 기능상 큰 문제를 일으키지는 않았다. 
+                                                    <p>전시 첫 날 실시간 녹음 패치에서 오브젝트 간 코드 구성을 실수하여 사운드 결과물 중 마지막으로 녹음된 것 빼고는 전부 초기화 되는 일이 발생했고, 둘째 날 전시 시작 전에 오류를 발견하고 수정했다. 
+                                                    <br>악기 선택 및 재생 부분에서 의도하지 않은 Max/Msp의 피아노 사운드가 계속 발생하긴 했지만 관람객들은 알아차리지 못했다. 생각보다 많은 사람들이 신기하게 체험하여 뿌듯했다.</p>
+                                                    <p>이번 사업에 지원하기 전부터 항상 궁금했던 알고리즘 작곡, 인공지능 음악에 관한 부분은 물론 소닉 아트 분야에 대해 전체적으로 알아볼 수 있어서 생각의 시야를 넓힐 수 있는 유익한 경험이었다. 
+                                                        또한 관련된 많은 분들의 특강을 들으며 대학원 과정에 대해서도 관심 갖게 됐고 예술과 기술을 융합한 창업도 관심갖고 있다.</p>
 
                                                     
                                                     <br>
                                                     <br>
                                     <!-- ref -->
                                                     <strong>ref</strong><br>  
-                                                    프로젝트에 대한 보다 자세한 내용은 <a target="_blank" rel="noopener" href="https://github.com/bigdata4th-first-line/edustats">edustats</a>에서 확인할 수 있다.<br>
-
+                                                    <div style="padding-left: 30px";>
+                                                        • "ml.markov Tutorial (Part 1) - Machine Learning in Max/MSP" Samuel Pearce-Davies. 201955, 2021939, https://www.youtube.com/watch?v=LG-GYFyJw74&ab_channel=Samuel Pearce-Davies 
+                                                        <br>• "ml.markov Tutorial (Part 2) - Machine Learning in Max/MSP" Samuel Pearce-Davies. 20195 13, 2021974, https://www.youtube.com/watch?v=9GG8dOaSTMA&ab_channel=SamuelPearce-Davies 
+                                                        <br>• "ml.markov Tutorial (Part 3) – Machine Learning in Max/MSP" Samuel Pearce-Davies. 2021 8 59 H, 20219 1594, https://www.youtube.com/watchv=PnWWh3C9jvk&ab_channel=SamuelPe
+                                                        arce-Davies 
+                                                        <br>• “The JavaScript-mtr Connection, Part 2 Cycling74. 2020년 12월 9일 수정, 2021년 9월 18일 접속, https://cycling74.com/tutorials/the-javascript-mtr-connection-part-2
+                                                        <br>• “Max Tutorial #2 Abstractions Revisited” Robin Parmar. 2021년 4월 13일 수정, 2021년 9월 20일 접속, https://www.youtube.com/watch?v=GBvTBXQIKQI
+                                                        <br>• "Max | Making a Drum Machine [Full lesson]” tune4media. 2019년 6월 16일 수정, 2021년 10월 3일 접속, https://www.youtube.com/watch?v=N9SwxvHmeRU
+                                                        <br>• "Max/MSP: Simple Harmony through routing MIDI data." David E. Farrell. 2017 4 10, 2021 10 10, https://www.youtube.com/watch?v=wXlBPC_DLC0
+                                                        <br>• “Node for Max: An Introduction" Cycling '74. 2018년 8월 29일 수정, 2021년 10월 15일 접속, https://www.youtube.com/watch?v=qSZH6fjOcXE
+                                                    </div>
                                                     <br>
+                                                    <br>
+                                                    <br>
+                                                    <div style="text-align: right;">
+                                                        인공지능 연계 콘텐츠 창의인재 양성사업 (KOCCA, 2021)
+                                                    </div> 
                                                 </div>
                                                 <footer class="article-footer">
                                                     <a data-url="http://example.com/2023/10/12/hello-world/" data-id="clnlyxhtr0000hcu4hy35fxhg" class="article-share-link"><i class="fa fa-share"></i>Share</a>

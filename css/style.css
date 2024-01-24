@@ -2173,4 +2173,21 @@ i.icon:before {
   #footer .credit {
     text-align: center;
   }
+  .audio-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.audio-container audio {
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .audio-container audio {
+        width: 45%; /* Adjust this value as needed */
+    }
+}
+
+
 }
