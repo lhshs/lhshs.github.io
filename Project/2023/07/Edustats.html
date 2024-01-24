@@ -63,9 +63,9 @@
                                             <li class="main-nav-list-item" >
                                                 <a class="main-nav-list-link" href="/">Home</a>
                                             </li>
-                                            <li class="main-nav-list-item" >
+                                            <!-- <li class="main-nav-list-item" >
                                                 <a class="main-nav-list-link" href="/about/index.html">About</a>
-                                            </li>
+                                            </li> -->
                                         </ul>
                                         <nav id="sub-nav">
                                             <div id="search-form-wrap">
@@ -132,7 +132,7 @@
                                                     <div class="article-date">
                                                         <i class="fa fa-clock-o"></i>
                                                         <a href="/2023/10/12/hello-world/" class="article-date">
-                                                            <time datetime="2023-10-11T16:23:48.614Z" itemprop="datePublished">23.08.09 - 23.08.11 </time>
+                                                            <time datetime="2023-10-11T16:23:48.614Z" itemprop="datePublished">23.07.20 - 23.07.26 </time>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -187,7 +187,7 @@
                                     <!-- Visualization -->
                                                     <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Visualization</h4>
                                                     <img src="/Project/2023/07/images/edustats2.png" alt="지역별 사교육 비율 시각화">
-                                                    데이터의 지역별 시각화는 지오서비스웹(GEOSERVICE-WEB)이라는 곳에서 제공하는 행정구역도 데이터를 JSON 파일로 변환해 사용했다. JSON 파일 내 ‘CTP_KOR_NM’을 수집한 데이터의 지역명과 일치시켜 줌으로써 위치 데이터를 받아올 수 있었다.</br>
+                                                    <p>데이터의 지역별 시각화는 지오서비스웹(GEOSERVICE-WEB)이라는 곳에서 제공하는 행정구역도 데이터를 JSON 파일로 변환해 사용했다. JSON 파일 내 ‘CTP_KOR_NM’을 수집한 데이터의 지역명과 일치시켜 줌으로써 위치 데이터를 받아올 수 있었다.</br>
                                                     <pre><code class="language-python">
 fig = px.choropleth(df, 
 geojson=korea_json, 
@@ -208,7 +208,7 @@ fig.layout.coloraxis.colorbar.title = ''
 fig.write_html('map_year.html')
                                                     </code></pre>
 
-                                                    <br>최종적으로 Plotly 의 Dash 와 합치기 위해 html 로 변환했고 같은 경로 내 assets 폴더를 생성 후 코드 실행 시 참조될 수 있게 했다.</br>
+                                                    <p>최종적으로 Plotly 의 Dash 와 합치기 위해 html 로 변환했고 같은 경로 내 assets 폴더를 생성 후 코드 실행 시 참조될 수 있게 했다.
                                                     <pre><code class="language-python">
 app.layout = html.Div([
                 html.Div([
@@ -222,8 +222,10 @@ app.layout = html.Div([
                         ])
                     )
                                                         </code></pre>
-                                                    <br>데이터 분포를 지역별로 표시하여 비교하고자, Plotly의 graph_obj를 활용해 Boxplot 을 추가했다. 
-                                                    <img src="/Project/2023/07/images/edustats3.png" alt="첫 호스팅 build에 사용된 시간">
+                                                    <p>데이터 분포를 지역별로 표시하여 비교하고자, Plotly의 graph_obj를 활용해 Boxplot 을 추가했다. </p>
+                                                    
+                                                    <p><img src="/Project/2023/07/images/edustats3.png"></p>
+                                                    
                                                     <pre><code class="language-python">
 ...
 import plotly.graph_objs as go
@@ -269,9 +271,9 @@ def update_plots(selected_column):
                                                     <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Hosting</h4>
                                                     <img src="/Project/2023/07/images/edustats4.png" alt="첫 호스팅 build에 사용된 시간">
                                                     Ploty의 공식 youtube 채널을 참고했고, render 라는 사이트를 활용했다. 
-                                                    render 사이트의 호스팅 구조는 필요한 라이브러리를 명시한 requirements.txt 파일과 .py 파일을 git repository에 업로드해 놓으면 되는 간단한 방식이었다. 
+                                                    <p>render 사이트의 호스팅 구조는 필요한 라이브러리를 명시한 requirements.txt 파일과 .py 파일을 git repository에 업로드해 놓으면 되는 간단한 방식이었다. 
                                                     여러 번의 배포 실패와 이번 프로젝트에서는 총 두 번의 배포를 성공했다. 
-                                                    render의 무료서비스는 최대 500 분의 build 제한 시간이 있지만 처음 사용해 보기에 충분한 듯 보인다.</br>
+                                                    <p>render의 무료서비스는 최대 500 분의 build 제한 시간이 있지만 처음 사용해 보기에 충분한 듯 보인다.</br>
                                                     
                                                     <br>
                                                     <br>

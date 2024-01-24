@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         
-        <title>통계청 데이터를 활용한 교육 통계 분석 | Hexo</title>
+        <title>Rule-Base Music Exhibition | Hexo</title>
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,9 +63,9 @@
                                             <li class="main-nav-list-item" >
                                                 <a class="main-nav-list-link" href="/">Home</a>
                                             </li>
-                                            <li class="main-nav-list-item" >
+                                            <!-- <li class="main-nav-list-item" >
                                                 <a class="main-nav-list-link" href="/about/index.html">About</a>
-                                            </li>
+                                            </li> -->
                                         </ul>
                                         <nav id="sub-nav">
                                             <div id="search-form-wrap">
@@ -125,14 +125,14 @@
                                             <div class="article-inner">
                                                 <header class="article-header">
                                                     <h1 class="article-title" itemprop="name">
-                                                        통계청 데이터를 활용한 교육 통계 분석
+                                                        Rule-Base Music Exhibition
                                                     </h1>
                                                 </header>
                                                 <div class="article-meta">
                                                     <div class="article-date">
                                                         <i class="fa fa-clock-o"></i>
                                                         <a href="/2023/10/12/hello-world/" class="article-date">
-                                                            <time datetime="2023-10-11T16:23:48.614Z" itemprop="datePublished">23.08.09 - 23.08.11 </time>
+                                                            <time datetime="2023-10-11T16:23:48.614Z" itemprop="datePublished">21.07 - 21.10 </time>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -156,142 +156,75 @@
 
                                                     <!-- article -->
                                                     <br>
-                                                    <strong>Member</strong> <br> 박준식, 이찬녕, 이형석, 임유하</br>
-                                                    <br>
-                                                    <strong>Roll</strong> <br> 데이터 수집 및 지도 시각화, DashBoard 제작 및 호스팅</br>
+                                                    <strong>Title</strong> <br> Gift - Draw The Music</br>
 
                                                     <br>
                                     <!-- Intro -->
-                                                    <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Introduction</h3>
-                                                    지역별 교육 기회의 불평등성 및 청소년 비행 문제 분석을 위해 지역별 중학생을 대변할 수 있는 데이터를 분석하고, 각 변수 사이의 상관관계 실증하는 것에 이번 프로젝트의 목적이 있다.</br>
-                                                    <br>분석 결과물을 대쉬보드 나타내고자 했고, 개인적으로 도전해보고 싶었던 것은 무료 도메인을 활용해 대쉬보드를 배포해 보는 것이었다. Plotly의 Dash를 주로 활용했으며, 최종 대쉬보드는 
-                                                    <a target="_blank" rel="noopener" href="https://first-dashboard.onrender.com/">이곳</a>에서 확인할 수 있다.</br>
-                                                    <s>무료 호스팅 서버가 구동될 때 까지 약 15초 정도 시간이 소요된다</s><br>
+                                                    <h4 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Introduction</h4>
+                                                    한국 콘텐츠 진흥원에서 주최한 ‘인공지능과 예술 융합 사업’에 참여하며 예술과 인공지능의 융합에 대해 교육받고 그것을 토대로 전시를 진행했다. 
+                                                    소닉 아트 분야로 참여했으며, 인공지능과 프로그래밍에 본격적으로 관심 갖게 된 프로젝트다.
+
+                                                    <p>전시의 최종 모습은 관람객이 그리는 그림의 데이터를 MIDI 데이터로 변환한 후 그 데이터를 직접 제작한 음악 알고리즘을 통해 하나의 기승전결이 있는 음악으로 만들어지게 하는 것으로 목표를 세웠다. 
+                                                    재즈 화성학을 바탕으로 '규칙 기반 알고리즘'을 제작했고. 관람객이 어떤 색깔로 그림을 그리느냐에 따라 밝은 느낌’또는 '어두운 느낌'의 음악으로 나타나게 했다. 
+                                                    <br>드럼 패턴같은 경우 신경 네트워크를 기반으로 하는 Magenta Studio를 활용하여 MIDI 데이터를 생성했으며 알고리즘과 함께 '음악'으로써 표현될 수 있게 <strong>[그림1]</strong>과 같이 전시했다.
+                                                    </p>
+                                                    <img src="/Project/2021/07/images/1.png" alt="[그림1], 최종 전시 모습">
 
                                                     <br>
                                     <!-- Method -->
                                                     <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Method</h3>
-                                                    <img src="/css/images/edustats1.png" alt="팀 내에서 맡은 역할 Workflow">
+                                                    <img src="/Project/2021/07/images/2.png" alt="[그림2], C 장조와 A 단조 구성음 수치화">
 
                                                     <br>
-                                    <!-- Data -->
-                                                    <h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Data</h3>
-                                                    - 2018-2022 지역별 중학교 졸업 후 상황  
-                                                    <br>- 2018-2022 지역별 중학교 사교육비 지출
-                                                    <br>- 2018-2022 지역별 청소년 음주율, 흡연율 (청소년 비행)
-                                                    <br>- 2018-2022 지역별 청소년 우울감 경험률
+                                      <!-- 1. Harmonics -->
+                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>1. Harmonics</h4>
+                                                    <img src="/Project/2021/07/images/3.png" alt="-">
+                                      <!-- 2. Melody -->
+                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>2. Melody</h4>
+                                                    <img src="/Project/2021/07/images/3.png" alt="-">
+
+                                      <!-- 3. Rhythm -->
+                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>3. Rhythm</h4>
+                                                    <img src="/Project/2021/07/images/3.png" alt="-">      
 
                                                     <br>
                                                     <br>
-                                    <!-- Visualization -->
-                                                    <h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Visualization</h3>
-                                                    <img src="/css/images/edustats2.png" alt="지역별 사교육 비율 시각화">
-                                                    데이터의 지역별 시각화는 지오서비스웹(GEOSERVICE-WEB)이라는 곳에서 제공하는 행정구역도 데이터를 JSON 파일로 변환해 사용했다. JSON 파일 내 ‘CTP_KOR_NM’을 수집한 데이터의 지역명과 일치시켜 줌으로써 위치 데이터를 받아올 수 있었다.</br>
-                                                    <figure class="highlight bash">
-                                                        <table>
-                                                            <!-- <td class="gutter"><pre><span class="line">1</span></pre></td> -->
-                                                            <!-- <td class="code"><pre><span class="line">hexo new </span><br></pre></td>
-                                                            <td class="code"><pre><span class="line">hexo new </span><br></pre></td>
-                                                            <td class="code"><pre><span class="line">hexo new </span><br></pre></td>
-                                                            <td class="code"><pre><span class="line">hexo new </span><br></pre></td> -->
-                                                            <!-- <span class="string">&quot;My New Post&quot;</span> -->
-                                                            fig = px.choropleth(df, </br>
-                                                                                <!-- geojson=korea_json, </br> -->
-                                                                                locations='지역', </br>
-                                                                                color='사교육비',           </br>
-                                                                                color_continuous_scale='YlOrRd',</br>
-                                                                                featureidkey='properties.CTP_KOR_NM',</br>
-                                                                                animation_frame='year')</br>
-                                                            </br>
-                                                            fig.update_geos(fitbounds="locations", visible=False)</br>
-                                                            fig.update_layout(</br>
-                                                                autosize=True,</br>
-                                                                title_text='Yearly Private Education Ratio (%)', </br>
-                                                                title_font_size=12, </br>
-                                                                title_x=0.5)</br>
-                                                            </br>
-                                                            fig.layout.coloraxis.colorbar.title = ''</br>
-                                                            fig.write_html('map_year.html')
-                                                        </table>
-                                                    </figure>
+                                      <!-- VSTI -->
+                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>VSTI</h4>
+                                                    <img src="/Project/2021/07/images/6.png" alt="-">    
 
-                                                    <br>최종적으로 Plotly 의 Dash 와 합치기 위해 html 로 변환했고 같은 경로 내 assets 폴더를 생성 후 코드 실행 시 참조될 수 있게 했다.</br>
-                                                    <figure class="highlight bash">
-                                                        <table>
-                                                            app.layout = html.Div([</br>
-                                                            html.Div([</br>
-                                                                                                            ...</br>
-                                                                # korea map</br>
-                                                                html.Iframe(</br>
-                                                                            src="assets/map_year.html",</br>
-                                                                            style={"height": "500px", "width": "100%"}),</br>
-                                                                                                            ...</br>
-                                                            ])</br>
-                                                            )</br>
-                                                        </table>
-                                                    </figure>
-                                                    <br>데이터 분포를 지역별로 표시하여 비교하고자, Plotly의 graph_obj를 활용해 Boxplot 을 추가했다. 
-                                                    <img src="/css/images/edustats3.png" alt="첫 호스팅 build에 사용된 시간">
-                                                    <figure class="highlight bash">
-                                                        <table>
-                                                            ... </br>
-                                                            import plotly.graph_objs as go </br>
-                                                            ... </br>
-                                                             </br>
-                                                            app.layout = html.Div([ </br>
-                                                                                                              ... </br>
-                                                                                # box plot </br>
-                                                                                html.Div([ </br>
-                                                                                    dcc.Dropdown( </br>
-                                                                                        id='column-dropdown', </br>
-                                                                                        options=dropdown_options, </br>
-                                                                                        value=df_boxsstrip.columns[11],  # Set Default Value </br>
-                                                                                        style={'width': '50%'} </br>
-                                                                                    ), </br>
-                                                                                    dcc.Graph(id='box-plot')]), </br>
-                                                            ]) </br>
-                                                             </br>
-                                                                                                                            ... </br>
-                                                             </br>
-                                                            # box plot </br>
-                                                            # Callback function definition </br>
-                                                            @callback( </br>
-                                                                Output('box-plot', 'figure'), </br>
-                                                                Input('column-dropdown', 'value') </br>
-                                                            ) </br>
-                                                            def update_plots(selected_column): </br>
-                                                                # Create the Box Plot </br>
-                                                                box_fig = go.Figure() </br>
-                                                                box_fig.add_trace(go.Box(x=df_boxsstrip['지역'], y=df_boxsstrip[selected_column], name='Box Plot',  </br>
-                                                                                         boxpoints='all', marker_color='#FF851B', marker_size=2, line_width=1 </br>
-                                                                                        )) </br>
-                                                                box_fig.update_layout(height=700, width=1300, title = 'Data Distribution') </br>
-                                                                return box_fig </br>
-                                                        </table>
-                                                    </figure>
+                                      <!-- Play -->
+                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Play</h4>
+                                                    <img src="/Project/2021/07/images/7.png" alt="-">                                                     
+                                                    
 
                                                     <br>
-                                    <!-- Hosting -->
-                                                    <h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Hosting</h3>
-                                                    <img src="/css/images/edustats4.png" alt="첫 호스팅 build에 사용된 시간">
-                                                    Ploty의 공식 youtube 채널을 참고했고, render 라는 사이트를 활용했다. 
-                                                    render 사이트의 호스팅 구조는 필요한 라이브러리를 명시한 requirements.txt 파일과 .py 파일을 git repository에 업로드해 놓으면 되는 간단한 방식이었다. 
-                                                    여러 번의 배포 실패와 이번 프로젝트에서는 총 두 번의 배포를 성공했다. 
-                                                    render의 무료서비스는 최대 500 분의 build 제한 시간이 있지만 처음 사용해 보기에 충분한 듯 보인다.</br>
+                                    <!-- Result -->
+                                                    <h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Result</h3>
+                                      <!-- UI -->
+                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>UI</h4>
+                                                    <img src="/Project/2021/07/images/7.png" alt="-">  
+                                      <!-- Interaction -->
+                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Interaction</h4>
+                                                    <img src="/Project/2021/07/images/7.png" alt="-">  
+                                      <!-- Interaction Output -->
+                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Interaction Output</h4>
+                                                    <img src="/Project/2021/07/images/7.png" alt="-">  
+                                      <!-- Music Output -->
+                                                    <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Music Output</h4>
+                                                    <img src="/Project/2021/07/images/7.png" alt="-">  
+                                    <!-- Discussion -->
+                                                    <h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Discussion</h3>
+                                                    <img src="/Project/2021/07/images/7.png" alt="-">                                                                                                                                                                           
+
                                                     
                                                     <br>
                                                     <br>
-                                    <!-- Code -->
-                                                    <strong>Code</strong><br>  
+                                    <!-- ref -->
+                                                    <strong>ref</strong><br>  
                                                     프로젝트에 대한 보다 자세한 내용은 <a target="_blank" rel="noopener" href="https://github.com/bigdata4th-first-line/edustats">edustats</a>에서 확인할 수 있다.<br>
 
                                                     <br>
-                                    <!-- ref -->
-                                                    <strong>Reference</strong><br>
-                                                    <a target="_blank" rel="noopener" href="https://plotly.com/examples/dashboards/">https://plotly.com/examples/dashboards/</a>
-                                                    <br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=H16dZMYmvqo&ab_channel=Plotly">https://www.youtube.com/watch?v=H16dZMYmvqo&ab_channel=Plotly</a>
-                                                    <br><a target="_blank" rel="noopener" href="https://render.com/">https://render.com/</a>
-
                                                 </div>
                                                 <footer class="article-footer">
                                                     <a data-url="http://example.com/2023/10/12/hello-world/" data-id="clnlyxhtr0000hcu4hy35fxhg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
